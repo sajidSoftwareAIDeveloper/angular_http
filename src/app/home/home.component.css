@@ -1,0 +1,78 @@
+.heading{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.home{
+    /* justify-content: center; */
+    justify-items: center;
+}
+input {
+    padding-inline: 10px;
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+    scrollbar-width: disable;
+    border:none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.fieldset{
+    border-radius:10px;
+    margin-top:20px;
+}
+.legend{
+    color:black;
+    font-size: 20px;
+}
+
+.right{
+    border:5px solid green;
+}
+
+.wrong{
+    border:5px solid red;
+}
+
+button {
+    margin: 5px;
+    font-size: 30px;
+    border-radius: 30px;
+    background-color: rgb(252, 178, 244);
+    padding-inline: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+
+    background: linear-gradient(
+    180deg,
+    red 0%,
+    blue 25%,
+    green 50%,
+    orange 75%,
+    red 100%
+  );
+  background-size: 100% 300%;
+  animation: moveBorder 4s infinite linear;
+}
+ button:hover {
+    background-color: red;
+}
+button:active {
+    background-color: aqua;
+}
+
+
+  @keyframes moveBorder {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+}

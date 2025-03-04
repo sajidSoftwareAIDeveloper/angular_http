@@ -1,0 +1,74 @@
+
+<div class="body-data">
+
+    <div class="loading">
+        @if(data.length==0){
+            <div>Loading........</div>
+        }
+    </div>
+
+    <div class="search">
+        @if(data.length!=0){
+            <app-data-search [data]="data" [dataKey]="dataKey" (showSearchingData)="showSearchingData($event)"/>
+        }
+    </div>
+    <div>
+        <table class="tableshow">
+
+            @if(!isDataNotFound){
+
+                @if(!checkDataInsideObject){
+                
+                    <tr class="trowh">
+                        @for(item of dataKey;track item){
+                            @if(item==dataKey[0]){<th>s.n.</th> }
+                            <th>{{item}}</th>
+                        }
+                    </tr>
+            
+                    @for(item of temdata;track item.id;let index = $index){
+                        <tr class="trow">
+                            <td>{{index+1}}</td>
+                            @for(i of dataKey;track i){
+            
+                                <td>{{item[i]}}</td>
+                            }
+                        </tr>
+                    }
+                }
+                <!-- @else{
+                    <tr class="trowh">
+                        @for(item of dataKey;track item){
+    
+                            @if(typeof item==='object'){
+                                <th>
+                                    
+                                </th>
+                            }else{
+                                 <th>{{item}}</th>
+                            }
+                        }
+                    </tr>
+            
+                    @for(item of data;track item.id){
+                        <tr class="trow">
+                            @for(i of dataKey;track i){
+            
+                                <td>{{item[i]}}</td>
+                            }
+                        </tr>
+                    }
+                } -->
+            }
+            @else{
+                <div style="color: red; font-size: 30px ;">
+                    <h1>data not found</h1>
+                </div>
+            }
+
+            
+        </table>
+    </div>
+
+
+</div>

@@ -1,0 +1,22 @@
+<div class="main">
+    <div>
+        <fieldset class="fieldset" [class]="isError?'wrong':'right'">
+           @if(name!=''){
+              <legend class="legend">{{isUniqueId}}</legend>
+           }
+           <input
+              #myInput 
+              type="text" 
+              id="search" 
+              [placeholder]="'search'"
+              [(ngModel)]="name"
+              (ngModelChange)="searchHandle(myInput.value)"
+           />
+        </fieldset>
+
+     </div>
+     <!-- <div [class]="name!=''?'searchButtonChange':'searchButton'">
+        <button (click)="searchHandle(myInput.value)">search</button>
+    </div> -->
+
+</div>
