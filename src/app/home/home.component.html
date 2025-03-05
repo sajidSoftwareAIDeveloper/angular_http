@@ -8,13 +8,13 @@
      <div>
          <fieldset class="fieldset" [class]="isError?'wrong':'right'">
             @if(isTyping!=''){
-               <legend class="legend">url</legend>
+               <legend class="legend">json url</legend>
             }
             <input
                #myInput 
                type="url" 
                id="url" 
-               [placeholder]="'url'"
+               [placeholder]="'json url'"
                [(ngModel)]="isTyping" 
             />
          </fieldset>

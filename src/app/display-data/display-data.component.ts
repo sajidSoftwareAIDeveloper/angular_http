@@ -19,10 +19,11 @@ export class DisplayDataComponent {
   public isDataNotFound:boolean=false;
 
 
-  constructor(private s:MySeviceService){}
+  constructor(private s:MySeviceService){ }
 
    ngOnInit(){
-
+    this.s.setURL(JSON.parse(localStorage.getItem('url') ||''));
+    
     this.s.getData().subscribe(item=>{
       this.data=item;this.dataKey=Object.keys(this.data[0]);
       this.temdata=this.data;

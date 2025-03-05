@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { MySeviceService } from '../my-sevice.service';
+// import { MySeviceService } from '../my-sevice.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent {
 
-  constructor(private route:Router,private url:MySeviceService){}
+  constructor(private route:Router){}
 
   public isError=false;
   public isTyping='';
