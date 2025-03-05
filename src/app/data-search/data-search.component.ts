@@ -14,29 +14,32 @@ export class DataSearchComponent {
 
   public isError=false;
   public isTyping=false;
-  public isUniqueId:string='';
+  // public isUniqueId:string='';
   public searchedData:Array<any>=[];
   public name='';
 
   @Input()data:Array<any>=[];
-  @Input()dataKey:Array<any>=[];
+  @Input()isUniqueId:string='';
   @Output()showSearchingData=new EventEmitter<Array<any>>();
 
-  findingUniqueId(){
-    for(let i=0;i<this.dataKey.length;i++){
-      if( (new Set(this.data.map(item=>item[this.dataKey[i]]) ).size)==this.data.length){
-         this.isUniqueId=this.dataKey[i];
-         break;
-      }
-    }
-  }
+
+  // constructor(){this.findingUniqueId; console.log('++++++++',this.isUniqueId)}
+
+  // findingUniqueId(){
+  //   for(let i=0;i<this.dataKey.length;i++){
+  //     if( (new Set(this.data.map(item=>item[this.dataKey[i]]) ).size)==this.data.length){
+  //        this.isUniqueId=this.dataKey[i];
+  //        break;
+  //     }
+  //   }
+  // }
 
   searchHandle(val:string){
     // alert('here');
     if(val!=''){
 
       this.isError=false;
-      this.findingUniqueId();
+      // this.findingUniqueId();
   
       if(this.isUniqueId!=''){
         this.searchedData= this.data.filter(item=>{

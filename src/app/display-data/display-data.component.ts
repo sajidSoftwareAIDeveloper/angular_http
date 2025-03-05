@@ -14,6 +14,7 @@ export class DisplayDataComponent {
   public data: Array<any> = [];
   public dataKey:Array<any> = [];
   public temdata: Array<any> = [];    // send as a props 
+  public isUniqueId:string='';
 
   public checkDataInsideObject=false;
   public isDataNotFound:boolean=false;
@@ -27,20 +28,21 @@ export class DisplayDataComponent {
     this.s.getData().subscribe(item=>{
       this.data=item;this.dataKey=Object.keys(this.data[0]);
       this.temdata=this.data;
-      this.Call();
+      this.findingUniqueId();
     });
   }
 
-   Call(){
+  findingUniqueId(){
     for(let i=0;i<this.dataKey.length;i++){
-
-      // console.log(this.dataKey[i] , typeof this.data[0][this.dataKey[i]] );
-      // if(typeof this.data[0][this.dataKey[i]]==='object'){
-      //   this.checkDataInsideObject=true;
-      //   break;
-      // }
+      if( (new Set(this.data.map(item=>item[this.dataKey[i]]) ).size)==this.data.length){
+         this.isUniqueId=this.dataKey[i];
+         break;
+      }
     }
   }
+
+  
+
 
   showSearchingData(val:Array<any>){
 

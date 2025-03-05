@@ -9,7 +9,7 @@
 
     <div class="search">
         @if(data.length!=0){
-            <app-data-search [data]="data" [dataKey]="dataKey" (showSearchingData)="showSearchingData($event)"/>
+            <app-data-search [data]="data" [isUniqueId]="isUniqueId" (showSearchingData)="showSearchingData($event)"/>
         }
     </div>
     <div>

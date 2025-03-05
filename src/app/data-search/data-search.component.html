@@ -8,7 +8,7 @@
               #myInput 
               type="text" 
               id="search" 
-              [placeholder]="'search'"
+              [placeholder]="'search ' + isUniqueId"
               [(ngModel)]="name"
               (ngModelChange)="searchHandle(myInput.value)"
            />
